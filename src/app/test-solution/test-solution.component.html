@@ -1,0 +1,45 @@
+<div class="container">
+    <form (ngSubmit)="onConsultar()">
+      <div class="form-group agrupa">
+  
+        <div class="form-group row">
+          <label class="control-label col-sm-2" for="nombreComercial">License Plate Number :</label>
+          <div class="col-sm-6">
+            <input [(ngModel)]="licencePlateNumber" type="text" class="form-control" id="licencePlateNumber" name="licencePlateNumber"
+              placeholder="Insert a Licence Plate Number" autofocus required>
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="control-label col-sm-2" for="nombreComercial">Date :</label>
+          <div class="col-sm-4">
+            <input [(ngModel)]="dayDate" type="text" class="form-control" id="dayDate" name="dayDate" placeholder="Insert a day of week" required>
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="control-label col-sm-2" for="nombreComercial">Time :</label>
+          <div class="col-sm-4">
+            <input [(ngModel)]="currentTime" type="time" class="form-control" id="dayDate" name="dayDate" required>
+          </div>
+        </div>
+  
+        <div class="container form-group row">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success"> Consultar</button>
+          </div>
+        </div>
+  
+        <div *ngIf="showResult && dayAvailable" class="alert alert-success">
+          <strong>Success!</strong> Your car can be on rad!.
+        </div>
+  
+        <div *ngIf="showResult && !dayAvailable" class="alert alert-danger">
+          <strong>Danger!</strong> Your car have 'Pico y Placa'.
+        </div>
+  
+  
+      </div>
+    </form>
+  
+  </div>
